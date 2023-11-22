@@ -32,7 +32,7 @@ export default defineComponent({
     changeSelectedSort(value: string) {
       this.selectedSort = value;
     }
-  }
+  },
 })
 </script>
 
@@ -49,8 +49,9 @@ export default defineComponent({
           {{ selectedSort }}
         </div>
       </template>
-      <v-list rounded>
+      <v-list rounded="lg">
         <v-list-item
+            class="selected-sort_list"
             v-for="(item, index) in sortInfo"
             :key="index"
         >
@@ -78,6 +79,13 @@ export default defineComponent({
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 14px;
+}
+.selected-sort_list {
+  transition: all .2s ease-in-out;
+  &:hover {
+    background-color: rgba(#FE5F1E, .05);
+    color: #FE5F1E;
+  }
 }
 
 .selected-sort {
